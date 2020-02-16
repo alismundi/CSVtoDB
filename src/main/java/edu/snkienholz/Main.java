@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 public class Main {
 
     public static void main(String[] args) throws IOException, CsvValidationException {
@@ -24,7 +25,7 @@ public class Main {
         bsdb.insertBooks(rows);
 
         // Load the json
-        /*
+        /* From https://github.com/jsgreenwell/CsvToDatabase/blob/master/src/main/java/edu/fgcu/dataengineering/Main.java
         1. Create instance of GSON
         2. Create a JsonReader object using FileReader
         3. Array of class instances of AuthorParser, assign data from our JsonReader
