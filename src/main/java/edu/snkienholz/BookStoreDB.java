@@ -53,7 +53,28 @@ public class BookStoreDB {
         stmt.executeUpdate();
 
       } catch (SQLException e) {
-        e.printStackTrace();
+        System.out.println(e.getMessage());
+      }
+    }
+  }
+
+  public void insertAuthors(AuthorParser[] authors) {
+
+    String sql = "INSERT INTO author(author_name, author_email, author_url) VALUES(?, ?, ?)";
+
+    for (AuthorParser author: authors) {
+
+      try {
+
+        PreparedStatement stmt = conn.prepareStatement(sql);
+
+        stmt.setString(1, author.getName());
+        stmt.setString(2, author.getEmail());
+        stmt.setString(3, author.getUrl());
+
+        stmt.executeUpdate();
+
+      } catch (SQLException e) {
         System.out.println(e.getMessage());
       }
     }
