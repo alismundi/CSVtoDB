@@ -91,4 +91,8 @@ public class CsvParser {
         }
         return true;
     }
+
+    public ArrayList<String[]> getFileRows() {
+        return (ArrayList<String[]>)fileRows;
+    }
 }
